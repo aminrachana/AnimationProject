@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');  
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap'); 
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
+
+header{
+  background-color: black;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+nav li{
+  color: #fff;
+}
+
+.main-container{
+  background: url("../Images/Background-1.jpg")no-repeat  center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  animation: change-bg 30s infinite ease-in-out alternate;
+}
+
+@keyframes change-bg{
+  0%{
+    background: url("../Images/Background-1.jpg")no-repeat center center;
+  }
+  25%{
+    background: url("../Images/Background-2.jpg")no-repeat center center;
+  }
+  50%{
+    background: url("../Images/Background-3.jpg")no-repeat center center;
+  }
+  75%{
+    background: url("../Images/Background-4.jpg") no-repeat center center;
+  }
+  100%{
+    background: url("../Images/Background-5.jpg")no-repeat center center;
+  }
+}
+
+#animate-name{
+  text-align: center;
+  font: 400 62px "Rubik Puddles", sans-serif;
+  color: #fff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  /*animation: textanim 3s linear infinite alternate;*/
+  padding:20px 55px;
+  border-radius: 35px;
+  margin-left: 350px;
+  margin-right: 350px;
+  
+
+}
+
+@keyframes gradient {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+
+/*@keyframes textanim{
+ 0%{color: red; }
+ 25%{color:yellow; }
+ 50%{color: blue; }
+ 75%{color:green; }
+ 100%{color:red;}
+}*/
+
+.game-container{
+  background-color: #fff;
+  display: flex;
+  margin: 50px 200px 50px 200px;
+  justify-content: center;
+  padding: 55px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 10vw);
+  font-family: "Neucha", sans-serif;
+  text-align: center;
+  position: relative;
+  
+}
+
+.line{
+  background-color: red;
+  width: 0;
+  height: 3px;
+  position: absolute;
+  transition: width 1s ease-in-out;
+ 
+}
+
+.box{
+  border: 2px solid black;
+  font-size: 8vw;
+  cursor: pointer;
+}
+
+.box:hover{
+  background-color: rgb(237, 190, 101);
+}
+
+#player-info{
+  padding: 0 35px;
+  font-size: 20px;
+  font-family: "Neucha", sans-serif;
+  text-shadow: 0 0 3px #e73e3e;
+}
+
+.info{
+  font-weight: bold;
+  color:crimson;
+  animation:  1s animate-turn ease infinite;
+}
+
+@keyframes animate-turn{
+  0%{
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+   
+ 50%{
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+
+  100%{
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+}
+
+.img-gif img{
+  width: 0;
+  transition: width 1s ease-in;
+}
+
+#reset{
+  font-family: "Neucha", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: 135px;
+  background-color: coral;
+  padding: 7px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px #aaaaaa;
+  transition:all 1s cubic-bezier(0.55, 0.09, 0.68, 0.53);
+}
+
+#reset:hover{
+  transform: scale(1.25);
+  background-color: darkmagenta;
+  color: #fff;
+}
